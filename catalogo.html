@@ -1,86 +1,20 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Catálogo Reyplast — PlexAmerica</title>
-<link rel="stylesheet" href="styles.css" />
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<meta name="description" content="Catálogo Reyplast distribuído pela PlexAmerica em Rondônia, Acre e Amazonas — utilidades domésticas com vantagem fiscal repassada. Em construção.">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Catálogo Reyplast — PlexAmerica">
+<meta property="og:description" content="Catálogo da linha Reyplast distribuída pela PlexAmerica na Amazônia Ocidental. Em breve.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://plexamerica.github.io/plexamerica-site-preview/catalogo.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="PlexAmerica">
+<meta property="og:image" content="https://plexamerica.github.io/plexamerica-site-preview/assets/brand/marca-hor-white.png">
+<link rel="canonical" href="https://plexamerica.github.io/plexamerica-site-preview/catalogo.html">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<div id="root" data-screen-label="Catálogo"></div>
-
-<script type="text/babel" src="map-amazonia.jsx"></script>
-<script type="text/babel" src="home-shared.jsx"></script>
-<script type="text/babel">
-  const { Topbar } = window.HomeShared;
-  const CAT_TOPBAR_THEME = { bg: "#0d1a40", text: "#FFFFFF" };
-
-  function CatalogoApp() {
-    return (
-      <main>
-        <Topbar theme={CAT_TOPBAR_THEME} active="catalogo" />
-        <section style={{
-          background: "#0d1a40", color: "#FFFFFF",
-          minHeight: "calc(100vh - 76px)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          padding: "clamp(72px, 10vw, 120px) clamp(16px, 3vw, 32px)",
-          textAlign: "center"
-        }}>
-          <div style={{ maxWidth: 720 }}>
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: 12,
-              fontSize: 12, fontWeight: 500, letterSpacing: "0.28em",
-              textTransform: "uppercase", color: "rgba(246,184,23,0.85)",
-              marginBottom: 32
-            }}>
-              <span style={{ width: 6, height: 6, borderRadius: 999, background: "#F6B817" }}></span>
-              <span>Catálogo Reyplast</span>
-            </div>
-            <h1 style={{
-              fontFamily: "var(--plex-font)", fontWeight: 700,
-              fontSize: "clamp(44px, 7.2vw, 96px)", lineHeight: 0.98,
-              letterSpacing: "-0.025em", margin: 0, textWrap: "balance"
-            }}>
-              Em breve<span style={{ color: "#F6B817" }}>.</span>
-            </h1>
-            <p style={{
-              fontSize: "clamp(16px, 1.6vw, 22px)", lineHeight: 1.5,
-              color: "rgba(255,255,255,0.75)",
-              margin: "clamp(20px, 2.5vw, 32px) auto 0", maxWidth: 560
-            }}>
-              Catálogo em construção. Em instantes você poderá explorar aqui toda a linha Reyplast distribuída pela PlexAmerica.
-            </p>
-            <div style={{ marginTop: "clamp(32px, 4vw, 48px)" }}>
-              <a href="index.html" style={{
-                color: "rgba(255,255,255,0.85)", textDecoration: "underline",
-                textDecorationColor: "rgba(255,255,255,0.25)", textUnderlineOffset: 4
-              }}>← Voltar para a página inicial</a>
-            </div>
-          </div>
-        </section>
-        <footer style={{ background: "#0d1a40", color: "rgba(255,255,255,0.78)",
-          borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-          <div style={{ maxWidth: 1280, margin: "0 auto",
-            padding: "clamp(48px, 6vw, 72px) clamp(16px, 3vw, 32px)",
-            display: "flex", flexWrap: "wrap", justifyContent: "space-between",
-            alignItems: "center", gap: 24 }}>
-            <img src="assets/brand/marca-hor-white.png?v=3" alt="PlexAmerica"
-                 style={{ height: 36, width: "auto", display: "block" }} />
-            <div style={{ fontSize: 13, lineHeight: 1.6,
-              color: "rgba(255,255,255,0.55)", textAlign: "right" }}>
-              <div>PlexAmerica Indústria e Comércio Ltda</div>
-              <div>Guajará-Mirim/RO · Brasil</div>
-            </div>
-          </div>
-        </footer>
-      </main>
-    );
-  }
-
-  ReactDOM.createRoot(document.getElementById("root")).render(<CatalogoApp />);
-</script>
-</body>
+<body class="theme-deep"><main><div style="height: 76px; border-bottom: 1px solid rgba(255, 255, 255, 0.07); position: relative; z-index: 4; background: rgb(13, 26, 64); color: rgb(255, 255, 255);"><div style="max-width: 1280px; margin: 0px auto; width: 100%; padding: 0px clamp(16px, 3vw, 32px); height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;"><div style="display: flex; align-items: center; gap: 14px;"><img src="assets/brand/marca-hor-white.png?v=3" alt="PlexAmerica" style="height: 40px; width: auto; display: block; object-fit: contain;"></div><nav style="display: flex; gap: 24px; font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, 0.78);"><a href="index.html" style="text-decoration: none; color: rgba(255, 255, 255, 0.78); border-bottom: 1px solid transparent; padding-bottom: 4px; white-space: nowrap;">Início</a><a href="sobre.html" style="text-decoration: none; color: rgba(255, 255, 255, 0.78); border-bottom: 1px solid transparent; padding-bottom: 4px; white-space: nowrap;">Sobre</a><a href="catalogo.html" style="text-decoration: none; color: rgb(255, 255, 255); border-bottom: 1px solid rgb(246, 184, 23); padding-bottom: 4px; white-space: nowrap;">Catálogo Reyplast</a><a href="para-fabricantes.html" style="text-decoration: none; color: rgba(255, 255, 255, 0.78); border-bottom: 1px solid transparent; padding-bottom: 4px; white-space: nowrap;">Para Fabricantes</a><a href="seja-revendedor.html" style="text-decoration: none; color: rgba(255, 255, 255, 0.78); border-bottom: 1px solid transparent; padding-bottom: 4px; white-space: nowrap;">Seja Revendedor</a></nav><div style="font-size: 13px; color: rgb(246, 184, 23); font-weight: 600; white-space: nowrap;">WhatsApp →</div></div></div><section style="background: rgb(13, 26, 64); color: rgb(255, 255, 255); min-height: calc(100vh - 76px); display: flex; align-items: center; justify-content: center; padding: clamp(72px, 10vw, 120px) clamp(16px, 3vw, 32px); text-align: center;"><div style="max-width: 720px;"><div style="display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(246, 184, 23, 0.85); margin-bottom: 32px;"><span style="width: 6px; height: 6px; border-radius: 999px; background: rgb(246, 184, 23);"></span><span>Catálogo Reyplast</span></div><h1 style="font-family: var(--plex-font); font-weight: 700; font-size: clamp(44px, 7.2vw, 96px); line-height: 0.98; letter-spacing: -0.025em; margin: 0px; text-wrap: balance;">Em breve<span style="color: rgb(246, 184, 23);">.</span></h1><p style="font-size: clamp(16px, 1.6vw, 22px); line-height: 1.5; color: rgba(255, 255, 255, 0.75); margin: clamp(20px, 2.5vw, 32px) auto 0; max-width: 560px;">Catálogo em construção. Em instantes você poderá explorar aqui toda a linha Reyplast distribuída pela PlexAmerica em Rondônia, Acre e Amazonas.</p><div style="margin-top: clamp(32px, 4vw, 48px);"><a href="index.html" style="color: rgba(255,255,255,0.85); text-decoration: underline rgba(255,255,255,0.25); text-underline-offset: 4px;">← Voltar para a página inicial</a></div></div></section><footer style="background: rgb(13, 26, 64); color: rgba(255, 255, 255, 0.78); border-top: 1px solid rgba(255, 255, 255, 0.06);"><div style="max-width: 1280px; margin: 0px auto; padding: clamp(48px, 6vw, 72px) clamp(16px, 3vw, 32px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px;"><img src="assets/brand/marca-hor-white.png?v=3" alt="PlexAmerica" style="height: 36px; width: auto; display: block;"><div style="font-size: 13px; line-height: 1.6; color: rgba(255, 255, 255, 0.55); text-align: right;"><div>PlexAmerica Indústria e Comércio Ltda</div><div>Guajará-Mirim/RO · Brasil</div></div></div></footer></main></body>
 </html>
