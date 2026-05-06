@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catálogo Reyplast — PlexAmerica</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root" data-screen-label="Catálogo"></div>
+
+<script type="text/babel" src="map-amazonia.jsx"></script>
+<script type="text/babel" src="home-shared.jsx"></script>
+<script type="text/babel">
+  const { Topbar } = window.HomeShared;
+  const CAT_TOPBAR_THEME = { bg: "#0d1a40", text: "#FFFFFF" };
+
+  function CatalogoApp() {
+    return (
+      <main>
+        <Topbar theme={CAT_TOPBAR_THEME} active="catalogo" />
+        <section style={{
+          background: "#0d1a40", color: "#FFFFFF",
+          minHeight: "calc(100vh - 76px)",
+          display: "flex", alignItems: "center", justifyContent: "center",
+          padding: "clamp(72px, 10vw, 120px) clamp(16px, 3vw, 32px)",
+          textAlign: "center"
+        }}>
+          <div style={{ maxWidth: 720 }}>
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: 12,
+              fontSize: 12, fontWeight: 500, letterSpacing: "0.28em",
+              textTransform: "uppercase", color: "rgba(246,184,23,0.85)",
+              marginBottom: 32
+            }}>
+              <span style={{ width: 6, height: 6, borderRadius: 999, background: "#F6B817" }}></span>
+              <span>Catálogo Reyplast</span>
+            </div>
+            <h1 style={{
+              fontFamily: "var(--plex-font)", fontWeight: 700,
+              fontSize: "clamp(44px, 7.2vw, 96px)", lineHeight: 0.98,
+              letterSpacing: "-0.025em", margin: 0, textWrap: "balance"
+            }}>
+              Em breve<span style={{ color: "#F6B817" }}>.</span>
+            </h1>
+            <p style={{
+              fontSize: "clamp(16px, 1.6vw, 22px)", lineHeight: 1.5,
+              color: "rgba(255,255,255,0.75)",
+              margin: "clamp(20px, 2.5vw, 32px) auto 0", maxWidth: 560
+            }}>
+              Catálogo em construção. Em instantes você poderá explorar aqui toda a linha Reyplast distribuída pela PlexAmerica.
+            </p>
+            <div style={{ marginTop: "clamp(32px, 4vw, 48px)" }}>
+              <a href="index.html" style={{
+                color: "rgba(255,255,255,0.85)", textDecoration: "underline",
+                textDecorationColor: "rgba(255,255,255,0.25)", textUnderlineOffset: 4
+              }}>← Voltar para a página inicial</a>
+            </div>
+          </div>
+        </section>
+        <footer style={{ background: "#0d1a40", color: "rgba(255,255,255,0.78)",
+          borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+          <div style={{ maxWidth: 1280, margin: "0 auto",
+            padding: "clamp(48px, 6vw, 72px) clamp(16px, 3vw, 32px)",
+            display: "flex", flexWrap: "wrap", justifyContent: "space-between",
+            alignItems: "center", gap: 24 }}>
+            <img src="assets/brand/marca-hor-white.png?v=3" alt="PlexAmerica"
+                 style={{ height: 36, width: "auto", display: "block" }} />
+            <div style={{ fontSize: 13, lineHeight: 1.6,
+              color: "rgba(255,255,255,0.55)", textAlign: "right" }}>
+              <div>PlexAmerica Indústria e Comércio Ltda</div>
+              <div>Guajará-Mirim/RO · Brasil</div>
+            </div>
+          </div>
+        </footer>
+      </main>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<CatalogoApp />);
+</script>
+</body>
+</html>

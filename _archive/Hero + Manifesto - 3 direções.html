@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PlexAmerica · Hero + Manifesto — 3 direções</title>
+<link rel="stylesheet" href="tokens.css" />
+<style>
+  body { background: #f0eee9; font-family: var(--plex-font); }
+  /* prevent horizontal scrollbars inside artboards */
+  .dc-card * { scrollbar-width: none; }
+</style>
+
+<!-- Splash thumbnail -->
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#0d1a40"/>
+    <text x="100" y="118" text-anchor="middle"
+          font-family="system-ui, sans-serif" font-weight="700"
+          font-size="72" fill="#F6B817" letter-spacing="-2">P</text>
+  </svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="map-amazonia.jsx"></script>
+<script type="text/babel" src="v1-editorial.jsx"></script>
+<script type="text/babel" src="v2-cartografico.jsx"></script>
+<script type="text/babel" src="v3-tipografico.jsx"></script>
+
+<script type="text/babel">
+  const { DesignCanvas, DCSection, DCArtboard, DCPostIt } = window;
+
+  // Cada artboard tem largura 1440 (largura nativa do desktop) e altura
+  // dimensionada para o hero+manifesto empilhados. Scale baixa só para
+  // caberem confortavelmente no canvas — o foco fullscreen mostra em 1:1.
+  const ARTBOARD_W = 1440;
+  const ARTBOARD_H = 1500;
+
+  function App() {
+    return (
+      <DesignCanvas>
+        <DCSection
+          id="hero-manifesto"
+          title="Hero + Manifesto — 3 direções"
+          subtitle="Brief: travar a estética antes de propagar para Home completa + Para Fabricantes. Clique no ícone ↗ no canto de cada artboard para ver em tela cheia. Compare e me diga qual encaixa com a personalidade da PlexAmerica."
+        >
+          <DCPostIt>
+            <strong>Para decidir:</strong> qual das 3 abordagens reflete a voz consultiva e premium do manifesto? V1 é a aposta segura (HBR-like), V2 é o "Maersk amazônico" (logística-first), V3 é o gesto editorial (agência B2B). Pode haver mistura — ex.: V1 com o tratamento de mapa da V2.
+          </DCPostIt>
+
+          <DCArtboard id="v1" label="V1 · Editorial sóbrio" width={ARTBOARD_W} height={ARTBOARD_H}>
+            <V1HeroManifesto />
+          </DCArtboard>
+
+          <DCArtboard id="v2" label="V2 · Cartográfico" width={ARTBOARD_W} height={ARTBOARD_H}>
+            <V2HeroManifesto />
+          </DCArtboard>
+
+          <DCArtboard id="v3" label="V3 · Tipográfico bold" width={ARTBOARD_W} height={ARTBOARD_H}>
+            <V3HeroManifesto />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

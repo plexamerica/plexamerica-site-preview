@@ -1,0 +1,76 @@
+/* PlexAmerica — design tokens
+   Source: Briefing v2 + Textos Finais (abril/2026) */
+
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-Light.otf") format("opentype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-LightItalic.otf") format("opentype");
+  font-weight: 300; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-Regular.otf") format("opentype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-RegularItalic.otf") format("opentype");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-Medium.otf") format("opentype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-MediumItalic.otf") format("opentype");
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-Semibold.otf") format("opentype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-SemiboldItalic.otf") format("opentype");
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-Bold.otf") format("opentype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "PlexAmerica";
+  src: url("fonts/PlexAmerica-BoldItalic.otf") format("opentype");
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+:root {
+  /* Paleta */
+  --plex-blue:        #253875; /* primária */
+  --plex-deep:        #0d1a40; /* hero / manifesto */
+  --plex-deep-2:      #0a1535; /* var. mais profunda p/ depth */
+  --plex-gold:        #F6B817; /* destaque, CTA, frase âncora */
+  --plex-gold-soft:   #FFD86B; /* glow / hover */
+  --plex-blue-light:  #4A6FA5; /* contornos sutis sobre deep */
+
+  /* Neutros */
+  --plex-white:       #FFFFFF;
+  --plex-paper:       #F6F4EE; /* off-white quente p/ fundos claros */
+  --plex-line:        #E4E0D6;
+  --plex-ink:         #15172A; /* texto sobre claro */
+  --plex-mute:        #6B7088; /* legendas / labels */
+
+  /* Tipografia */
+  --plex-font: "PlexAmerica", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: var(--plex-font); }

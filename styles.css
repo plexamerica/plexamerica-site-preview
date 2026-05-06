@@ -1,0 +1,11 @@
+@import url("tokens.css");
+
+/* Global resets shared across all pages.
+   Per-page background is set inline on <body> data attributes or by the React app root. */
+html, body { margin: 0; padding: 0; font-family: var(--plex-font); -webkit-font-smoothing: antialiased; }
+body { color: #15172A; background: #FFFFFF; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: inherit; }
+
+/* Home page uses a deep-blue body background */
+body.theme-deep { background: #0d1a40; }

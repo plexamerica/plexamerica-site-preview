@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PlexAmerica · V4 — Síntese</title>
+<link rel="stylesheet" href="tokens.css" />
+<style>
+  html, body { background: #0d1a40; }
+  body { margin: 0; }
+  /* simula um viewport desktop a 1440px de largura, com letterboxing
+     se a janela for maior. O artboard é o próprio body. */
+  .frame {
+    width: 1440px;
+    margin: 0 auto;
+    background: #0d1a40;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.4);
+  }
+  @media (max-width: 1440px) {
+    .frame { width: 100%; }
+  }
+  /* Em < 900px a nav vira um menu icônico para não competir com a marca. */
+  @media (max-width: 900px) {
+    nav.plex-topnav { display: none !important; }
+    .plex-mobile-menu { display: inline-flex !important; }
+  }
+  .plex-mobile-menu {
+    display: none;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    align-items: center; justify-content: center;
+    color: #FFFFFF; cursor: pointer;
+    background: transparent;
+  }
+  .plex-mobile-menu span {
+    width: 16px; height: 1.5px; background: currentColor;
+    box-shadow: 0 5px 0 currentColor, 0 -5px 0 currentColor;
+  }
+</style>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#0d1a40"/>
+    <text x="100" y="118" text-anchor="middle"
+          font-family="system-ui, sans-serif" font-weight="700"
+          font-size="72" fill="#F6B817" letter-spacing="-2">P</text>
+  </svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="frame" id="root"></div>
+
+<script type="text/babel" src="map-amazonia.jsx"></script>
+<script type="text/babel" src="v4-sintese.jsx"></script>
+
+<script type="text/babel">
+  ReactDOM.createRoot(document.getElementById("root")).render(<V4HeroManifesto />);
+</script>
+</body>
+</html>

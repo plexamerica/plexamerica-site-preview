@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PlexAmerica · Home A vs B — temas</title>
+<meta name="ext-resource-dependency" content="assets/brand/marca-hor-white.png" data-resource-id="logoWhite" />
+<meta name="ext-resource-dependency" content="assets/brand/marca-hor-color.png" data-resource-id="logoColor" />
+<meta name="ext-resource-dependency" content="assets/brand/reyplast-hires.png" data-resource-id="logoReyplast" />
+
+<link rel="stylesheet" href="tokens.css" />
+<style>
+  html, body { margin: 0; background: #1a1a1a; font-family: var(--plex-font); }
+  .stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 24px;
+    align-items: start;
+  }
+  .col { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .label {
+    color: #F6B817; font-weight: 600; font-size: 13px; letter-spacing: 0.18em;
+    text-transform: uppercase; padding-left: 4px;
+  }
+  .label small { color: rgba(255,255,255,0.55); font-weight: 400; letter-spacing: 0.04em;
+    text-transform: none; margin-left: 10px; font-size: 12px; }
+  /* Cada artboard renderiza em 1440px e é escalado para caber na coluna. */
+  .artboard {
+    width: 1440px;
+    transform-origin: top left;
+    background: #0d1a40;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .frame {
+    /* O frame externo recebe a altura escalada para reservar layout.
+       width:100% + min-width:0 garante que ele não expanda para o tamanho
+       intrínseco do artboard de 1440px e respeite a coluna do grid. */
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+</style>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#0d1a40"/>
+    <text x="100" y="118" text-anchor="middle"
+          font-family="system-ui, sans-serif" font-weight="700"
+          font-size="72" fill="#F6B817" letter-spacing="-2">P</text>
+  </svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="map-amazonia.jsx"></script>
+<script type="text/babel" src="home-shared.standalone.jsx"></script>
+<script type="text/babel" src="home-sections.standalone.jsx"></script>
+
+<script type="text/babel">
+  const { Topbar, Hero, Manifesto } = window.HomeShared;
+  const { Marcas, Cobertura, PorQue, Categorias, DualCta, Footer } = window.HomeSections;
+  const { A, B } = window.HOME_THEMES;
+
+  function HomePage({ theme }) {
+    return (
+      <div style={{ width: "100%", background: "#0d1a40", color: "#FFF" }}>
+        <Topbar theme={theme.hero} />
+        <Hero theme={theme} />
+        <Manifesto theme={theme} />
+        <Marcas theme={theme} />
+        <Cobertura theme={theme} />
+        <PorQue theme={theme} />
+        <Categorias theme={theme} />
+        <DualCta theme={theme} />
+        <Footer theme={theme} />
+      </div>
+    );
+  }
+
+  function ScaledArtboard({ children }) {
+    const wrapRef = React.useRef(null);
+    const innerRef = React.useRef(null);
+    const [scale, setScale] = React.useState(0.5);
+    const [h, setH] = React.useState(2000);
+
+    React.useLayoutEffect(() => {
+      function recompute() {
+        const w = wrapRef.current?.clientWidth || 700;
+        const s = w / 1440;
+        setScale(s);
+        const innerH = innerRef.current?.scrollHeight || 2000;
+        setH(innerH * s);
+      }
+      recompute();
+      window.addEventListener("resize", recompute);
+      // also recompute after fonts/images
+      const t = setTimeout(recompute, 400);
+      return () => { window.removeEventListener("resize", recompute); clearTimeout(t); };
+    }, []);
+
+    return (
+      <div className="frame" ref={wrapRef} style={{ height: h }}>
+        <div className="artboard" ref={innerRef}
+             style={{ transform: `scale(${scale})` }}>
+          {children}
+        </div>
+      </div>
+    );
+  }
+
+  function App() {
+    return (
+      <div className="stage">
+        <div className="col">
+          <div className="label">Versão A <small>alternância escuro / claro</small></div>
+          <ScaledArtboard><HomePage theme={A} /></ScaledArtboard>
+        </div>
+        <div className="col">
+          <div className="label">Versão B <small>predominância clara</small></div>
+          <ScaledArtboard><HomePage theme={B} /></ScaledArtboard>
+        </div>
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
