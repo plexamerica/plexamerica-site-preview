@@ -340,13 +340,31 @@
 .plex-mobile-menu-btn {
   display: none;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(246, 184, 23, 0.5);
   border-radius: 4px;
   padding: 8px 12px;
-  color: white;
-  font-size: 18px;
+  color: #F6B817;
+  font-size: 20px;
+  line-height: 1;
   cursor: pointer;
   font-family: var(--plex-font);
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.plex-mobile-menu-btn:hover,
+.plex-mobile-menu-btn[aria-expanded="true"] {
+  background: rgba(246, 184, 23, 0.1);
+  border-color: #F6B817;
+}
+
+/* Link ativo dentro do drawer (página corrente) */
+.plex-mobile-drawer a.active {
+  color: #F6B817;
+  border-left: 3px solid #F6B817;
+  padding-left: 12px;
 }
 
 @media (max-width: 768px) {
