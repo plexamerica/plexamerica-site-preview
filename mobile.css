@@ -327,40 +327,9 @@
   }
   
   
-  /* ──── FOOTER ──── */
-  
-  /* Footer vira 1 coluna */
-  footer > div > div[style*="grid-template-columns: 1.2fr 1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
-  
-  /* Footer padding menor */
-  footer > div {
-    padding: 48px 20px 32px !important;
-  }
-  
-  /* Texto do footer legível */
-  footer * {
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-    font-weight: 500 !important;
-  }
+  /* ──── FOOTER: ver bloco "RODAPÉ ENXUTO" no fim do arquivo (08/10/2026) ──── */
 
-  footer h3,
-  footer div[style*="letter-spacing: 0.22em"] {
-    font-size: 12px !important;
-  }
 
-  footer div[style*="margin-top: 64px"] {
-    font-size: 13px !important;
-  }
-  footer div[style*="color: rgba(255, 255, 255, 0.75)"],
-  footer a[style*="color: rgba(255, 255, 255, 0.75)"] {
-    color: rgba(255, 255, 255, 0.9) !important;
-  }
-  
-  
   /* ──── FORMULÁRIOS (página revendedor/fabricantes) ──── */
   
   /* Inputs ocupam 100% */
@@ -410,12 +379,7 @@
   section div[style*="padding: 24px"] {
     padding: 20px !important;
   }
-  
-  /* Footer ainda mais compacto */
-  footer > div {
-    padding: 36px 16px 24px !important;
-  }
-  
+
 }
 
 
@@ -674,4 +638,175 @@ html {
   .rota-parada .papel {
     font-size: 12px;
   }
+}
+
+
+/* ───────────────────────────────────────────────────────────────────
+   RODAPÉ ENXUTO (todas as páginas PT + EN) — 08/10/2026
+   Logo · WhatsApp + Contato · razão social/CNPJ · institucional · ©
+   ─────────────────────────────────────────────────────────────────── */
+
+.site-footer {
+  background: #0d1a40;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--plex-font);
+}
+.site-footer .sf-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 56px clamp(16px, 3vw, 32px) 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.site-footer .sf-top,
+.site-footer .sf-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.site-footer .sf-logo { height: 36px; width: auto; display: block; }
+.site-footer .sf-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.site-footer .sf-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 10px 18px; border-radius: 4px;
+  font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap;
+}
+.site-footer .sf-wa { background: #F6B817; color: #0d1a40; }
+.site-footer .sf-contato { color: #fff; border: 1px solid rgba(255, 255, 255, 0.35); }
+.site-footer .sf-btn:hover { opacity: 0.9; }
+.site-footer .sf-btn svg { flex-shrink: 0; width: 18px; height: 18px; }
+.site-footer .sf-legal { font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, 0.75); }
+.site-footer .sf-links { display: flex; gap: 10px; align-items: center; font-size: 14px; }
+.site-footer .sf-links a { color: rgba(255, 255, 255, 0.85); text-decoration: none; }
+.site-footer .sf-links a:hover { color: #F6B817; }
+.site-footer .sf-links span { color: rgba(255, 255, 255, 0.35); }
+.site-footer .sf-copy {
+  font-size: 13px; color: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .site-footer .sf-inner { padding: 40px 20px 28px; gap: 24px; }
+  .site-footer .sf-top,
+  .site-footer .sf-bottom { flex-direction: column; align-items: flex-start; }
+  .site-footer .sf-ctas { flex-direction: column; width: 100%; }
+  .site-footer .sf-btn { width: 100%; justify-content: center; font-size: 16px; white-space: normal; text-align: center; }
+  .site-footer .sf-legal,
+  .site-footer .sf-links { font-size: 15px; }
+}
+
+
+/* ───────────────────────────────────────────────────────────────────
+   FORMULÁRIO FABRICANTES (webhook) — honeypot + erro — 08/10/2026
+   ─────────────────────────────────────────────────────────────────── */
+
+.hp-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px; height: 1px; overflow: hidden;
+}
+.form-erro {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border-radius: 4px;
+  background: #FDECEC;
+  border: 1px solid #E5A3A3;
+  color: #8A1C1C;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* ───────────────────────────────────────────────────────────────────
+   PÁGINAS CONTATO e OBRIGADO (PT + EN) — 08/10/2026
+   ─────────────────────────────────────────────────────────────────── */
+
+.pg-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 32px);
+}
+.pg-hero {
+  background: #0d1a40;
+  color: #fff;
+  padding: clamp(64px, 9vw, 112px) 0 clamp(48px, 6vw, 80px);
+}
+.pg-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(246, 184, 23, 0.9); margin-bottom: 24px;
+}
+.pg-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: #F6B817; }
+.pg-title {
+  font-family: var(--plex-font); font-weight: 700;
+  font-size: clamp(36px, 5.5vw, 64px); line-height: 1.05; letter-spacing: -0.02em; margin: 0;
+}
+.pg-title span { color: #F6B817; }
+.pg-lead {
+  font-size: clamp(16px, 1.5vw, 20px); line-height: 1.6; color: rgba(255, 255, 255, 0.85);
+  max-width: 680px; margin: 20px 0 0;
+}
+.pg-body { background: #F8F9FB; color: #15172A; padding: clamp(48px, 7vw, 88px) 0; }
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.ct-card {
+  display: flex; flex-direction: column; gap: 8px;
+  background: #fff; border: 1px solid rgba(13, 26, 64, 0.1); border-radius: 6px;
+  padding: 28px 24px; text-decoration: none; color: #15172A;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ct-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(13, 26, 64, 0.08); }
+.ct-card .ct-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #B8860B;
+}
+.ct-card strong {
+  font-size: 19px; font-weight: 700; color: #253875; line-height: 1.3; overflow-wrap: anywhere;
+}
+.ct-card .ct-hint { font-size: 14px; line-height: 1.5; color: #5C5F77; }
+.ct-card.ct-fab { background: #253875; border-color: #253875; }
+.ct-card.ct-fab .ct-label { color: #F6B817; }
+.ct-card.ct-fab strong { color: #fff; }
+.ct-card.ct-fab .ct-hint { color: rgba(255, 255, 255, 0.8); }
+
+.ct-info {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;
+}
+.ct-info > div {
+  background: #fff; border: 1px solid rgba(13, 26, 64, 0.1); border-radius: 6px; padding: 24px;
+}
+.ct-info .ct-h {
+  font-size: 13px !important; font-weight: 600 !important; letter-spacing: 0.16em;
+  text-transform: uppercase; color: #253875; margin: 0 0 10px; line-height: 1.3 !important;
+}
+.ct-info p { margin: 0; font-size: 16px; line-height: 1.6; color: #15172A; }
+
+.ty-check {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: #16A34A; color: #fff;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 28px;
+}
+.ty-check svg { width: 36px; height: 36px; }
+.ty-small { font-size: 15px; color: rgba(255, 255, 255, 0.7); margin: 12px 0 0; }
+.ty-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+.pg-btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+  padding: 14px 26px; border-radius: 4px; font-weight: 600; font-size: 15px; text-decoration: none;
+}
+.pg-btn-gold { background: #F6B817; color: #0d1a40; }
+.pg-btn-ghost { color: #fff; border: 1px solid rgba(255, 255, 255, 0.35); }
+
+@media (max-width: 768px) {
+  .ct-grid,
+  .ct-info { grid-template-columns: 1fr; }
+  .ty-ctas { flex-direction: column; }
+  .pg-btn { width: 100%; }
+  .ct-card strong { font-size: 18px; }
 }

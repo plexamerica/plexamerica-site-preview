@@ -15,7 +15,12 @@
   try { if (localStorage.getItem('banner-en-dismissed')) return; } catch (e) {}
 
   // Página com par EN vai direto pra ela; demais vão pra home EN
-  var target = /\/para-fabricantes\.html$/.test(path) ? '/en/para-fabricantes.html' : '/en/';
+  var pares = {
+    '/para-fabricantes.html': '/en/para-fabricantes.html',
+    '/contato.html': '/en/contact.html',
+    '/obrigado.html': '/en/thank-you.html'
+  };
+  var target = pares[path] || '/en/';
 
   var css =
     '.lang-banner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;' +
