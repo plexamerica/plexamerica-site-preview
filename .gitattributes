@@ -1,0 +1,2 @@
+# vCard exige CRLF — não normalizar
+*.vcf -text

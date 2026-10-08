@@ -4,3 +4,9 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# Produção (/opt/plexamerica/web/html): itens que NÃO vão para o repo
+# catalogo/ é gerado por publicar-catalogo.sh a partir do _CATALOGO_MASTER
+catalogo/
+*.bak*
+.backup-*/

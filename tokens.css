@@ -69,7 +69,7 @@
   --plex-mute:        #6B7088; /* legendas / labels */
 
   /* Tipografia */
-  --plex-font: "PlexAmerica", "Inter", system-ui, -apple-system, sans-serif;
+  --plex-font: "PlexAmerica", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 * { box-sizing: border-box; }

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# /jcabral (cartão digital) é protegido por noindex (meta + X-Robots-Tag),
+# não por Disallow — um Disallow impediria o Google de ler o noindex.
+
+Sitemap: https://plexamerica.com.br/sitemap.xml

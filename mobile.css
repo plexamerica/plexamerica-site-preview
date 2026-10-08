@@ -101,28 +101,65 @@
     line-height: 1.05 !important;
   }
   
-  /* Subtítulos */
+  /* Corpo de texto — legível sem zoom (ciclo 07/10: 16px / 500 / 1.6 — 400 ficava fino no iPhone) */
   section p {
-    font-size: 15px !important;
-    line-height: 1.5 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0 !important;
   }
-  
-  /* H2 menores */
+
+  /* Texto sobre fundo escuro: branco mais forte (o cinza 72–82% afinava a letra) */
+  section p[style*="rgba(255, 255, 255, 0.7"],
+  section p[style*="rgba(255, 255, 255, 0.8"] {
+    color: rgba(255, 255, 255, 0.92) !important;
+  }
+  section div[style*="color: rgba(255, 255, 255, 0.72)"] {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* H2 */
   section h2 {
-    font-size: 28px !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
     line-height: 1.15 !important;
   }
-  
+
   /* H3 cards */
   section h3 {
-    font-size: 18px !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
   }
-  
-  /* Tags/badges acima dos títulos */
+
+  /* Eyebrows (01 ·, 02 ·) e labels dos cards */
   section > div > div[style*="letter-spacing: 0.32em"],
   section > div > div[style*="letter-spacing: 0.28em"] {
-    font-size: 10px !important;
-    letter-spacing: 0.18em !important;
+    font-size: 12px !important;
+    letter-spacing: 0.16em !important;
+  }
+  section div[style*="letter-spacing: 0.22em"] {
+    font-size: 12px !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  /* Header fixo no topo durante todo o scroll (inclusive no rodapé) */
+  .site-header {
+    position: sticky !important;
+    top: 0;
+    z-index: 100 !important;
+    height: 60px !important;
+    background: #253875 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .site-header > div {
+    padding: 0 16px !important;
+    gap: 12px !important;
+  }
+  .site-header img {
+    height: 32px !important;
+  }
+  .site-header nav {
+    display: none !important;
   }
   
   
@@ -144,6 +181,16 @@
   section div[style*="grid-template-columns: 1.4fr"] {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
+  }
+  
+  /* Grids 2 colunas em minmax()/repeat(2) — Sobre, Fabricantes, Revendedor */
+  section div[style*="grid-template-columns: minmax"],
+  section div[style*="grid-template-columns: repeat(2"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  section div[style*="grid-template-columns"] > * {
+    min-width: 0;
   }
   
   /* Grid 0.9fr 1.3fr (cobertura) */
@@ -216,7 +263,7 @@
     height: 100px !important;
     right: 24px !important;
     bottom: 40px !important;
-    opacity: 0.4 !important;
+    opacity: 0.12 !important;
   }
   
   
@@ -227,11 +274,41 @@
     aspect-ratio: 16/10 !important;
   }
   
-  /* Imagens dos produtos nos cards de categoria */
-  section div[style*="aspect-ratio: 16 / 10"] img {
-    object-fit: cover !important;
+  /* Categorias: 2 colunas, molduras quadradas, produto inteiro sobre branco */
+  section div.prod-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+  /* Grid de marcas: itens não alargam a coluna; selo quebra linha */
+  section div[style*="grid-template-columns: 1.4fr"] > div {
+    min-width: 0 !important;
+  }
+  section div[style*="grid-template-columns: 1.4fr"] div[style*="white-space: nowrap"] {
+    white-space: normal !important;
+  }
+  section .prod-grid div[style*="aspect-ratio: 16 / 10"] {
+    aspect-ratio: 1 / 1 !important;
+  }
+  section .prod-grid div[style*="aspect-ratio: 16 / 10"] img {
+    object-fit: contain !important;
     width: 100% !important;
     height: 100% !important;
+    padding: 10px !important;
+    background: #FFFFFF !important;
+  }
+  section .prod-grid > div {
+    min-width: 0 !important;
+  }
+  section .prod-grid h3 {
+    font-size: 15px !important;
+    overflow-wrap: break-word;
+  }
+  section .prod-grid p {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+  section .prod-grid div[style*="padding: 20px"] {
+    padding: 12px !important;
   }
   
   /* Foto da sede - aspect 4/5 */
@@ -263,14 +340,24 @@
     padding: 48px 20px 32px !important;
   }
   
-  /* Texto do footer um pouco menor */
+  /* Texto do footer legível */
   footer * {
-    font-size: 13px !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
   }
-  
+
   footer h3,
   footer div[style*="letter-spacing: 0.22em"] {
-    font-size: 10px !important;
+    font-size: 12px !important;
+  }
+
+  footer div[style*="margin-top: 64px"] {
+    font-size: 13px !important;
+  }
+  footer div[style*="color: rgba(255, 255, 255, 0.75)"],
+  footer a[style*="color: rgba(255, 255, 255, 0.75)"] {
+    color: rgba(255, 255, 255, 0.9) !important;
   }
   
   
@@ -438,10 +525,15 @@
    UTILIDADES GERAIS
    ─────────────────────────────────────────────────────────────────── */
 
-/* Previne overflow horizontal */
+/* Previne overflow horizontal.
+   "clip" (não "hidden"): hidden transforma o body em container de scroll
+   e quebra o position: sticky do header. */
 html, body {
   overflow-x: hidden;
   max-width: 100vw;
+}
+@supports (overflow-x: clip) {
+  html, body { overflow-x: clip; }
 }
 
 /* Imagens responsivas por padrão */

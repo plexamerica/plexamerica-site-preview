@@ -1,5 +1,5 @@
-@import url("tokens.css");
-@import url("mobile.css");
+@import url("tokens.css?v=20261007b");
+@import url("mobile.css?v=20261007b");
 
 /* Global resets shared across all pages.
    Per-page background is set inline on <body> data attributes or by the React app root. */

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>José Cabral · PlexAmerica</title>
+<meta name="description" content="José Cabral · Diretor Comercial · PlexAmerica · Importador/Distribuidor exclusivo Reyplast e Luz Marina em RO/AC/AM">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#253875">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://plexamerica.com.br/jcabral/">
+<meta property="og:title" content="José Cabral · PlexAmerica">
+<meta property="og:description" content="José Cabral · Diretor Comercial · PlexAmerica">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<style>
+:root{--navy:#253875;--gold:#F6B817;--deep:#0d1a40;--white:#fff;--gray:#F2F2F2}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--deep);color:var(--white);-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
+.card{width:100%;max-width:480px;min-height:100%;display:flex;flex-direction:column;background:var(--navy)}
+.top{display:flex;justify-content:flex-end;align-items:center;padding:calc(16px + env(safe-area-inset-top,0px)) 20px 0}
+.logo{display:block;height:26px;width:auto;max-width:100%;margin:4px auto 28px}
+@media (min-width:768px){.logo{height:32px}}
+.lang{display:flex;gap:4px;background:rgba(255,255,255,.1);border-radius:999px;padding:3px}
+.lang button{font:600 12px/1 Poppins,system-ui,sans-serif;color:var(--white);background:none;border:0;border-radius:999px;padding:7px 10px;cursor:pointer;letter-spacing:.04em}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--navy)}
+.hero{text-align:center;padding:20px 24px 28px}
+h1{font-size:28px;font-weight:700;line-height:1.2}
+.role{margin-top:6px;color:var(--gold);font-weight:600;font-size:17px}
+.hero-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:50% 15%;border:3px solid #F6B817;box-shadow:0 4px 12px rgba(0,0,0,.2);display:block;margin:0 auto 16px;background:var(--gold)}
+@media (max-width:480px){.hero-photo{width:140px;height:140px;border:2px solid #F6B817}}
+.partners{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:280px;margin:0 auto}
+.partners a{-webkit-tap-highlight-color:rgba(246,184,23,.35);cursor:pointer;transition:transform .2s ease,opacity .2s ease,box-shadow .2s ease;background:var(--white);border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center;padding:10px}
+.partners img{max-height:64px;max-width:100%;width:auto;height:auto}
+.partners a:hover{transform:scale(1.03);opacity:.9}
+.partners a:active{transform:scale(.97);box-shadow:0 0 0 3px var(--gold)}
+.partners a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.excl{margin:12px 0 18px;font-weight:500;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.9);line-height:1.5}
+@media (min-width:768px){.partners{gap:16px;max-width:320px}}
+.actions{display:flex;flex-direction:column;gap:12px;padding:8px 20px 28px}
+.btn{display:flex;align-items:center;gap:14px;min-height:56px;padding:0 20px;border-radius:14px;font:600 16px/1.2 Poppins,system-ui,sans-serif;text-decoration:none;color:var(--white);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);transition:transform .1s}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.btn svg{width:22px;height:22px;flex:none}
+footer{margin-top:auto;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));text-align:center;font-size:12px;background:var(--deep)}
+.slogan-mark{max-width:240px;width:100%;height:auto;display:block;margin:24px auto 0;opacity:1}
+@media (max-width:480px){.slogan-mark{max-width:180px}}
+footer .legal{margin-top:14px;color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="top">
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <img class="logo" src="assets/logo.png" width="663" height="64" alt="PlexAmerica">
+    <!-- Foto: jose-cabral.webp (q85) + jose-cabral.jpg (fallback). Para trocar, sobrescrever os dois. -->
+    <picture><source srcset="assets/jose-cabral.webp" type="image/webp"><img class="hero-photo" src="assets/jose-cabral.jpg" alt="José Cabral" width="180" height="180" fetchpriority="high"></picture>
+    <h1>José Cabral</h1>
+    <p class="role" data-i18n="role">Diretor Comercial</p>
+  </section>
+
+  <nav class="actions">
+    <a class="btn primary" href="jose-cabral.vcf" download="jose-cabral.vcf">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      <span data-i18n="save">Salvar Contato</span>
+    </a>
+    <a class="btn" href="https://wa.me/5569999003787">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg>
+      <span data-i18n="wa">Conversar no WhatsApp</span>
+    </a>
+    <a class="btn" href="mailto:jose@plexamerica.com.br">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      <span data-i18n="mail">Enviar Email</span>
+    </a>
+    <a class="btn" href="https://plexamerica.com.br">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+      <span data-i18n="site">Visitar Site</span>
+    </a>
+    <!-- LinkedIn: ativar quando José confirmar o perfil
+    <a class="btn" href="https://www.linkedin.com/in/SLUG">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+      <span>LinkedIn</span>
+    </a> -->
+  </nav>
+
+  <footer>
+    <div class="partners">
+      <a href="https://reyplast.pe" target="_blank" rel="noopener noreferrer" title="Visite Reyplast · Fabricante peruano" data-i18n-title="tRey"><img src="assets/reyplast.png" width="167" height="128" alt="Reyplast"></a>
+      <a href="https://horneadosunicos.com.bo" target="_blank" rel="noopener noreferrer" title="Visite Horneados Únicos · Luz Marina Bolivia" data-i18n-title="tLuz"><img src="assets/luz-marina.png" width="123" height="128" alt="Horneados Únicos de Luz Marina"></a>
+    </div>
+    <p class="excl" data-i18n="excl">Importador / Distribuidor Exclusivo · RO/AC/AM</p>
+    <img src="assets/conectando-oportunidades.png" alt="Conectando Oportunidades" class="slogan-mark" width="480" height="81">
+    <p class="legal">PlexAmerica Indústria e Comércio Ltda · <span style="white-space:nowrap">Guajará-Mirim/RO</span></p>
+  </footer>
+</main>
+<script>
+(function(){
+  var T={
+    pt:{html:"pt-BR",role:"Diretor Comercial",excl:"Importador / Distribuidor Exclusivo · RO/AC/AM",save:"Salvar Contato",wa:"Conversar no WhatsApp",mail:"Enviar Email",site:"Visitar Site",tRey:"Visite Reyplast · Fabricante peruano",tLuz:"Visite Horneados Únicos · Luz Marina Bolivia"},
+    en:{html:"en",role:"Commercial Director",excl:"Exclusive Importer / Distributor · RO/AC/AM, Brazil",save:"Save Contact",wa:"Chat on WhatsApp",mail:"Send Email",site:"Visit Website",tRey:"Visit Reyplast · Peruvian manufacturer",tLuz:"Visit Horneados Únicos · Luz Marina Bolivia"},
+    es:{html:"es",role:"Director Comercial",excl:"Importador / Distribuidor Exclusivo · RO/AC/AM, Brasil",save:"Guardar Contacto",wa:"Hablar por WhatsApp",mail:"Enviar Correo",site:"Visitar Sitio",tRey:"Visite Reyplast · Fabricante peruano",tLuz:"Visite Horneados Únicos · Luz Marina Bolivia"}
+  };
+  var KEY="jcabral-lang";
+  function set(l){
+    if(!T[l])l="pt";
+    var t=T[l];
+    document.documentElement.lang=t.html;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){el.textContent=t[el.getAttribute("data-i18n")]});
+    document.querySelectorAll("[data-i18n-title]").forEach(function(el){el.title=t[el.getAttribute("data-i18n-title")]});
+    document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===l)});
+    try{localStorage.setItem(KEY,l)}catch(e){}
+  }
+  var saved=null;
+  try{saved=localStorage.getItem(KEY)}catch(e){}
+  var nav=(navigator.language||"pt").slice(0,2).toLowerCase();
+  set(saved||(T[nav]?nav:(nav==="pt"?"pt":"en")));
+  document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-lang"))})});
+})();
+</script>
+</body>
+</html>
