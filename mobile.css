@@ -546,3 +546,132 @@ img {
 html {
   scroll-behavior: smooth;
 }
+
+
+
+/* ───────────────────────────────────────────────────────────────────
+   ROTA DE IMPORTAÇÃO (para-fabricantes, PT + EN) — 08/10/2026
+   Sentido: Pacífico (Iquique/Arica) → Bolívia → Guajará-Mirim
+   Mobile-first: vertical com "↓". Vira horizontal com "→" quando o
+   CARD (não a tela) tem ≥ 500px — container query. Em 1024px o card
+   tem ~430px, onde 3 colunas cortariam "GUAYARAMERÍN".
+   ─────────────────────────────────────────────────────────────────── */
+
+.rota-wrap {
+  container-type: inline-size;
+  container-name: rota;
+}
+
+.rota-fronteira {
+  list-style: none;
+  margin: 0 0 4px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.rota-parada {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0 0 34px;
+  min-width: 0;
+}
+
+.rota-parada:last-child {
+  padding-bottom: 0;
+}
+
+.rota-parada .bola {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  background: #F6B817;
+  border: 2px solid #0d1a40;
+  border-radius: 50%;
+}
+
+/* seta vertical sob a bola */
+.rota-parada:not(:last-child)::after {
+  content: "↓";
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 20px;
+  text-align: center;
+  color: #F6B817;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.rota-parada .info {
+  min-width: 0;
+}
+
+.rota-parada .nome {
+  font-size: 16px;
+  font-weight: 700;
+  color: #253875;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.rota-parada .pais {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5C5F77;
+  margin-bottom: 2px;
+}
+
+.rota-parada .papel {
+  font-size: 13px;
+  font-style: italic;
+  color: #6B7088;
+  line-height: 1.35;
+}
+
+@container rota (min-width: 500px) {
+  .rota-fronteira {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    padding: 8px 0;
+  }
+
+  .rota-parada {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    padding: 0;
+  }
+
+  .rota-parada .bola {
+    margin: 0 0 12px;
+  }
+
+  /* seta horizontal entre paradas, na altura da bola */
+  .rota-parada:not(:last-child)::after {
+    content: "→";
+    left: auto;
+    bottom: auto;
+    right: -24px;
+    top: -2px;
+    font-size: 22px;
+  }
+
+  .rota-parada .nome {
+    font-size: 13px;
+    white-space: nowrap;
+    margin-bottom: 4px;
+  }
+
+  .rota-parada .pais,
+  .rota-parada .papel {
+    font-size: 12px;
+  }
+}
