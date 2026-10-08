@@ -81,7 +81,7 @@ footer .legal{margin-top:14px;color:rgba(255,255,255,.7)}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
       <span data-i18n="mail">Enviar Email</span>
     </a>
-    <a class="btn" href="https://plexamerica.com.br">
+    <a class="btn" href="https://plexamerica.com.br" data-i18n-href="siteUrl">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
       <span data-i18n="site">Visitar Site</span>
     </a>
@@ -105,9 +105,9 @@ footer .legal{margin-top:14px;color:rgba(255,255,255,.7)}
 <script>
 (function(){
   var T={
-    pt:{html:"pt-BR",role:"Diretor Comercial",excl:"Importador / Distribuidor Exclusivo · RO/AC/AM",save:"Salvar Contato",wa:"Conversar no WhatsApp",mail:"Enviar Email",site:"Visitar Site",tRey:"Visite Reyplast · Fabricante peruano",tLuz:"Visite Horneados Únicos · Luz Marina Bolivia"},
-    en:{html:"en",role:"Commercial Director",excl:"Exclusive Importer / Distributor · RO/AC/AM, Brazil",save:"Save Contact",wa:"Chat on WhatsApp",mail:"Send Email",site:"Visit Website",tRey:"Visit Reyplast · Peruvian manufacturer",tLuz:"Visit Horneados Únicos · Luz Marina Bolivia"},
-    es:{html:"es",role:"Director Comercial",excl:"Importador / Distribuidor Exclusivo · RO/AC/AM, Brasil",save:"Guardar Contacto",wa:"Hablar por WhatsApp",mail:"Enviar Correo",site:"Visitar Sitio",tRey:"Visite Reyplast · Fabricante peruano",tLuz:"Visite Horneados Únicos · Luz Marina Bolivia"}
+    pt:{html:"pt-BR",siteUrl:"https://plexamerica.com.br/",role:"Diretor Comercial",excl:"Importador / Distribuidor Exclusivo · RO/AC/AM",save:"Salvar Contato",wa:"Conversar no WhatsApp",mail:"Enviar Email",site:"Visitar Site",tRey:"Visite Reyplast · Fabricante peruano",tLuz:"Visite Horneados Únicos · Luz Marina Bolivia"},
+    en:{html:"en",siteUrl:"https://plexamerica.com.br/en/",role:"Commercial Director",excl:"Exclusive Importer / Distributor · RO/AC/AM, Brazil",save:"Save Contact",wa:"Chat on WhatsApp",mail:"Send Email",site:"Visit Website",tRey:"Visit Reyplast · Peruvian manufacturer",tLuz:"Visit Horneados Únicos · Luz Marina Bolivia"},
+    es:{html:"es",siteUrl:"https://plexamerica.com.br/en/",role:"Director Comercial",excl:"Importador / Distribuidor Exclusivo · RO/AC/AM, Brasil",save:"Guardar Contacto",wa:"Hablar por WhatsApp",mail:"Enviar Correo",site:"Visitar Sitio",tRey:"Visite Reyplast · Fabricante peruano",tLuz:"Visite Horneados Únicos · Luz Marina Bolivia"}
   };
   var KEY="jcabral-lang";
   function set(l){
@@ -116,6 +116,7 @@ footer .legal{margin-top:14px;color:rgba(255,255,255,.7)}
     document.documentElement.lang=t.html;
     document.querySelectorAll("[data-i18n]").forEach(function(el){el.textContent=t[el.getAttribute("data-i18n")]});
     document.querySelectorAll("[data-i18n-title]").forEach(function(el){el.title=t[el.getAttribute("data-i18n-title")]});
+    document.querySelectorAll("[data-i18n-href]").forEach(function(el){el.href=t[el.getAttribute("data-i18n-href")]});
     document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===l)});
     try{localStorage.setItem(KEY,l)}catch(e){}
   }
